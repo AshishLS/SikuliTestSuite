@@ -22,31 +22,6 @@ namespace SikuliTestSuit
             InitializeComponent();
             trViewScripts.CheckBoxes = true;
             trViewScripts.AfterCheck += AfterCheck;
-
-            UseMRU();
-            //tBxScriptsFolder.Text = @"H:\SikuliScripts";
-            //tBxSikuliInstallationPath.Text = @"H:\Softwares\Sikuli built";
-            //tBxTestDataPath.Text = @"H:\SikuliScripts\SikuliTestData";
-
-            // Home
-            //tBxScriptsFolder.Text = @"C:\Users\ASHISH\Dropbox\SikuliScripts";
-            //tBxSikuliInstallationPath.Text = @"E:\Development\Riyaz\SikuliExecutables";
-            //tBxTestDataPath.Text = @"C:\Users\ASHISH\Dropbox\SikuliScripts";
-        }
-
-        private void UseMRU()
-        {
-            if (File.Exists("MRU.txt"))
-            {
-                var reader = File.ReadAllLines("MRU.txt");
-                if (reader.Count() > 3)
-                {
-                    tBxTestDataPath.Text = reader[0];
-                    tBxScriptsFolder.Text = reader[1];
-                    tBxSikuliInstallationPath.Text = reader[2];
-                    tbxImageRepoPath.Text = reader[3];
-                }
-            }
         }
 
         private void AfterCheck(object sender, TreeViewEventArgs e)
@@ -72,13 +47,11 @@ namespace SikuliTestSuit
 
         private void SaveMRU()
         {
-            var writer = File.CreateText("MRU.txt");
-            writer.Flush();
-            writer.WriteLine(tBxTestDataPath.Text);
-            writer.WriteLine(tBxScriptsFolder.Text);
-            writer.WriteLine(tBxSikuliInstallationPath.Text);
-            writer.WriteLine(tbxImageRepoPath.Text);
-            writer.Close();
+            Properties.Settings.Default.settingTestDataPath = tBxTestDataPath.Text;
+            Properties.Settings.Default.settingScriptsFolder = tBxScriptsFolder.Text;
+            Properties.Settings.Default.settingSikuliInstallationPath = tBxSikuliInstallationPath.Text;
+            Properties.Settings.Default.settingImageRepoPath = tbxImageRepoPath.Text;
+            Properties.Settings.Default.Save();
         }
 
         private bool hasAccessPermission(string path)

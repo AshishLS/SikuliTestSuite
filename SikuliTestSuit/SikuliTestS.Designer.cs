@@ -91,11 +91,12 @@
             // 
             // tbxImageRepoPath
             // 
+            this.tbxImageRepoPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SikuliTestSuit.Properties.Settings.Default, "settingImageRepoPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.tbxImageRepoPath.Location = new System.Drawing.Point(120, 94);
             this.tbxImageRepoPath.Name = "tbxImageRepoPath";
             this.tbxImageRepoPath.Size = new System.Drawing.Size(377, 20);
             this.tbxImageRepoPath.TabIndex = 7;
-            this.tbxImageRepoPath.Text = "H:\\SikuliScripts\\ImageRepo";
+            this.tbxImageRepoPath.Text = global::SikuliTestSuit.Properties.Settings.Default.settingImageRepoPath;
             // 
             // lblImageRepoPath
             // 
@@ -109,27 +110,30 @@
             // 
             // tBxSikuliInstallationPath
             // 
+            this.tBxSikuliInstallationPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SikuliTestSuit.Properties.Settings.Default, "settingSikuliInstallationPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.tBxSikuliInstallationPath.Location = new System.Drawing.Point(120, 68);
             this.tBxSikuliInstallationPath.Name = "tBxSikuliInstallationPath";
             this.tBxSikuliInstallationPath.Size = new System.Drawing.Size(377, 20);
             this.tBxSikuliInstallationPath.TabIndex = 5;
-            this.tBxSikuliInstallationPath.Text = "H:\\Softwares\\Sikuli built";
+            this.tBxSikuliInstallationPath.Text = global::SikuliTestSuit.Properties.Settings.Default.settingSikuliInstallationPath;
             // 
             // tBxScriptsFolder
             // 
+            this.tBxScriptsFolder.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SikuliTestSuit.Properties.Settings.Default, "settingScriptsFolder", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.tBxScriptsFolder.Location = new System.Drawing.Point(120, 45);
             this.tBxScriptsFolder.Name = "tBxScriptsFolder";
             this.tBxScriptsFolder.Size = new System.Drawing.Size(377, 20);
             this.tBxScriptsFolder.TabIndex = 4;
-            this.tBxScriptsFolder.Text = "H:\\SikuliScripts";
+            this.tBxScriptsFolder.Text = global::SikuliTestSuit.Properties.Settings.Default.settingScriptsFolder;
             // 
             // tBxTestDataPath
             // 
+            this.tBxTestDataPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SikuliTestSuit.Properties.Settings.Default, "settingTestDataPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.tBxTestDataPath.Location = new System.Drawing.Point(120, 22);
             this.tBxTestDataPath.Name = "tBxTestDataPath";
             this.tBxTestDataPath.Size = new System.Drawing.Size(377, 20);
             this.tBxTestDataPath.TabIndex = 3;
-            this.tBxTestDataPath.Text = "H:\\SikuliScripts\\SikuliTestData";
+            this.tBxTestDataPath.Text = global::SikuliTestSuit.Properties.Settings.Default.settingTestDataPath;
             // 
             // trViewScripts
             // 

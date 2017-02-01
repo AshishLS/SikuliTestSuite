@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SikuliTestSuit.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="settingTestDataPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">H:\SikuliScripts\SikuliTestData</Value>
+    </Setting>
+    <Setting Name="settingScriptsFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">H:\SikuliScripts</Value>
+    </Setting>
+    <Setting Name="settingSikuliInstallationPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">H:\Softwares\Sikuli built</Value>
+    </Setting>
+    <Setting Name="settingImageRepoPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">H:\SikuliScripts\ImageRepo</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
