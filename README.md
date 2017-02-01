@@ -1,0 +1,2 @@
+# SikuliTestSuite
+Sikuli Test suite
