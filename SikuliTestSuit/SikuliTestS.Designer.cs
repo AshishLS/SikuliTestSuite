@@ -40,6 +40,9 @@
             this.trViewScripts = new System.Windows.Forms.TreeView();
             this.btnSetPrereq = new System.Windows.Forms.Button();
             this.btnRunTests = new System.Windows.Forms.Button();
+            this.tbxLogArea = new System.Windows.Forms.TextBox();
+            this.lblRunForTimes = new System.Windows.Forms.Label();
+            this.counterRunTimes = new System.Windows.Forms.DomainUpDown();
             this.gBxPreReq.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,9 +51,9 @@
             this.lblTestDataPath.AutoSize = true;
             this.lblTestDataPath.Location = new System.Drawing.Point(6, 25);
             this.lblTestDataPath.Name = "lblTestDataPath";
-            this.lblTestDataPath.Size = new System.Drawing.Size(79, 13);
+            this.lblTestDataPath.Size = new System.Drawing.Size(91, 13);
             this.lblTestDataPath.TabIndex = 0;
-            this.lblTestDataPath.Text = "Test Data Path";
+            this.lblTestDataPath.Text = "Test Results Path";
             // 
             // lblScriptsFolder
             // 
@@ -92,6 +95,7 @@
             // tbxImageRepoPath
             // 
             this.tbxImageRepoPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SikuliTestSuit.Properties.Settings.Default, "settingImageRepoPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbxImageRepoPath.Enabled = false;
             this.tbxImageRepoPath.Location = new System.Drawing.Point(120, 94);
             this.tbxImageRepoPath.Name = "tbxImageRepoPath";
             this.tbxImageRepoPath.Size = new System.Drawing.Size(377, 20);
@@ -163,12 +167,62 @@
             this.btnRunTests.UseVisualStyleBackColor = true;
             this.btnRunTests.Click += new System.EventHandler(this.btnRunTests_Click);
             // 
+            // tbxLogArea
+            // 
+            this.tbxLogArea.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.tbxLogArea.Location = new System.Drawing.Point(570, 181);
+            this.tbxLogArea.Multiline = true;
+            this.tbxLogArea.Name = "tbxLogArea";
+            this.tbxLogArea.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbxLogArea.Size = new System.Drawing.Size(383, 365);
+            this.tbxLogArea.TabIndex = 7;
+            // 
+            // lblRunForTimes
+            // 
+            this.lblRunForTimes.AutoSize = true;
+            this.lblRunForTimes.Location = new System.Drawing.Point(531, 124);
+            this.lblRunForTimes.Name = "lblRunForTimes";
+            this.lblRunForTimes.Size = new System.Drawing.Size(76, 13);
+            this.lblRunForTimes.TabIndex = 8;
+            this.lblRunForTimes.Text = "Run For Times";
+            // 
+            // counterRunTimes
+            // 
+            this.counterRunTimes.Items.Add("0");
+            this.counterRunTimes.Items.Add("1");
+            this.counterRunTimes.Items.Add("2");
+            this.counterRunTimes.Items.Add("3");
+            this.counterRunTimes.Items.Add("4");
+            this.counterRunTimes.Items.Add("5");
+            this.counterRunTimes.Items.Add("6");
+            this.counterRunTimes.Items.Add("7");
+            this.counterRunTimes.Items.Add("8");
+            this.counterRunTimes.Items.Add("9");
+            this.counterRunTimes.Items.Add("10");
+            this.counterRunTimes.Items.Add("11");
+            this.counterRunTimes.Items.Add("12");
+            this.counterRunTimes.Items.Add("13");
+            this.counterRunTimes.Items.Add("14");
+            this.counterRunTimes.Items.Add("15");
+            this.counterRunTimes.Items.Add("16");
+            this.counterRunTimes.Items.Add("17");
+            this.counterRunTimes.Items.Add("18");
+            this.counterRunTimes.Items.Add("19");
+            this.counterRunTimes.Location = new System.Drawing.Point(613, 122);
+            this.counterRunTimes.Name = "counterRunTimes";
+            this.counterRunTimes.Size = new System.Drawing.Size(65, 20);
+            this.counterRunTimes.TabIndex = 9;
+            this.counterRunTimes.Text = "1";
+            // 
             // SikuliTestS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(808, 571);
+            this.ClientSize = new System.Drawing.Size(965, 571);
+            this.Controls.Add(this.counterRunTimes);
+            this.Controls.Add(this.lblRunForTimes);
+            this.Controls.Add(this.tbxLogArea);
             this.Controls.Add(this.btnRunTests);
             this.Controls.Add(this.btnSetPrereq);
             this.Controls.Add(this.trViewScripts);
@@ -178,6 +232,7 @@
             this.gBxPreReq.ResumeLayout(false);
             this.gBxPreReq.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -195,6 +250,9 @@
         private System.Windows.Forms.Button btnRunTests;
         private System.Windows.Forms.TextBox tbxImageRepoPath;
         private System.Windows.Forms.Label lblImageRepoPath;
+        private System.Windows.Forms.TextBox tbxLogArea;
+        private System.Windows.Forms.Label lblRunForTimes;
+        private System.Windows.Forms.DomainUpDown counterRunTimes;
     }
 }
 
