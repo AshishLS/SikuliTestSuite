@@ -85,7 +85,8 @@ namespace SikuliTestSuit
                     continue;
 
                 // If any of them has .sikuli extention, directly add them in this tree node.
-                if (item.Name.Contains(".sikuli"))
+                // some are modules, so avoid them.
+                if (item.Name.Contains(".sikuli") && !item.Name.Contains("module_"))
                     topNodes.Add(item.FullName, item.Name);
                 else
                 {
