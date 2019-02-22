@@ -36,3 +36,8 @@ This package is stand-alone and does not rely on C# application at all.
 Please refer to the Sikuli_Demo.mp4 -  a 2-minute video to have an idea of how to run the tests.
 To create tests efficiently, check this [Youtube Playlist](https://www.youtube.com/playlist?list=PL1A2CSdiySGJJNe3WzCezcI7by5SPfJTS) on SikuliX IDE - Cannot be simpler than this.
 
+## Limitations of using SikuliX
+* The IDE sometimes doesn't run updated code
+* SikuliX is largely dependent on the screen resolution. It's not always garanteed that the script will run on other machines as is.
+* There are some tricks that one can use to overcome the deficiencies but it takes some time to optimize.
+
