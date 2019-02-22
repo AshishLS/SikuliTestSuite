@@ -44,6 +44,9 @@ To create tests efficiently, check this [Youtube Playlist](https://www.youtube.c
 
 ## Limitations of using SikuliX
 * The IDE sometimes doesn't run updated code
-* SikuliX is largely dependent on the screen resolution. It's not always garanteed that the script will run on other machines as is.
+* SikuliX is largely dependent on the screen resolution. It's not always guaranteed that the script will run on other machines as is.
 * There are some tricks that one can use to overcome the deficiencies but it takes some time to optimize.
+
+## Possible alternative to this
+http://doc.sikuli.org/faq/020-unit-test.html
 
