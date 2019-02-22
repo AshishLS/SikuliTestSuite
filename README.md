@@ -15,6 +15,6 @@ Sikuli Test suite
 
 . This is required becuase depending on this output, the application will know which tests to be shown in green and red.
 
-. For more information watch the video in the project.
+. For more information watch the sikuli_demo.mp4 video in the project.
 
 http://doc.sikuli.org/
