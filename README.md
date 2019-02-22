@@ -1,4 +1,4 @@
-## Welcome to the SikuliTestSuite wiki!
+# Welcome to the SikuliTestSuite wiki!
 
 Sikuli is a tool used for UI based testing.
 It has the capability to simulate user interaction.
@@ -15,13 +15,19 @@ However, we get adjusted to it pretty quickly.
 ## Regarding this Test Suite.
 I had created this test suite to run the scripts automatically and show the past and failed tests to the tester.
 This Test suite has two distinct parts.
-First is a C# application, a test harness.
+First is a C# application, a test harness. Once we load appropriate paths in this app, it will give user list of tests and can run the tests single or multiple times. It creates a report of passed and failed tests.
+
+![Test Harness](https://github.com/AshishLS/SikuliTestSuite/blob/master/CSharpApp.JPG)
+
 Once we load appropriate paths in this app, it will give user list of tests and can run the tests single or multiple times.
 It creates a report of passed and failed tests.
 
 The second and most important part is the Sikuli package itself.
 This package is standard one available on Sikuli website.
-It contains the IDE and also Jython runtimes to run the tests.
+It contains the IDE and also Jython runtimes to run the tests. This package is stand-alone and does not rely on C# application at all.
+
+![SikuliX IDE](https://github.com/AshishLS/SikuliTestSuite/blob/master/SikuliXIDE.JPG)
+
 This package is stand-alone and does not rely on C# application at all.
 
 ## How to use this Suite.
