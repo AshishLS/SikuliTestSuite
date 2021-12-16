@@ -52,7 +52,6 @@ namespace SikuliTestSuit
             Properties.Settings.Default.settingTestDataPath = tBxTestDataPath.Text;
             Properties.Settings.Default.settingScriptsFolder = tBxScriptsFolder.Text;
             Properties.Settings.Default.settingSikuliInstallationPath = tBxSikuliInstallationPath.Text;
-            Properties.Settings.Default.settingImageRepoPath = tbxImageRepoPath.Text;
             Properties.Settings.Default.Save();
         }
 
@@ -132,7 +131,7 @@ namespace SikuliTestSuit
                 }
 
                 string finalCommand = "";
-                SetEnvironmentVariables(ref finalCommand);
+                // SetEnvironmentVariables(ref finalCommand); #This seems redundant now (Dec 21)
                 // example - "H:\Softwares\Sikuli built\runsikulix.cmd" -r "H:\Sikuli Scripts\Sik_TableSelectCells.sikuli" >> "H:\Sikuli Scripts\SikuliTestData\131274998357987988.txt"
                 finalCommand += String.Format("\"{0}\" -r \"{1}\" >> \"{2}\"", runCommand, item.Name, intermediateFileName);
                 //finalCommand += String.Format("\"{0}\" -r \"{1}\"", runCommand, item.Name);
@@ -177,22 +176,23 @@ namespace SikuliTestSuit
                 runningTest.BackColor = Color.White;
         }
 
-        private void SetEnvironmentVariables(ref string finalCommand)
-        {
-            string envFilePath = tBxScriptsFolder.Text + "\\SetEnvVariables.py";
-            StreamWriter strWriter = File.CreateText(envFilePath);
-            if (strWriter != null)
-            {
-                strWriter.WriteLine("from sikuli import* #http://doc.sikuli.org/globals.html#importingsikuliscripts");
-                strWriter.WriteLine("import os");
-                //strWriter.WriteLine(String.Format("os.environ[\"{0}\"]=\"{1}\"", "SIKULI_IMAGE_REPO", tbxImageRepoPath.Text));
-                strWriter.WriteLine(String.Format("addImagePath('{0}')", tbxImageRepoPath.Text));
-                //strWriter.WriteLine("print(\"Validation - Check Env Variable SIKULI_IMAGE_PATH = %s\" % os.environ['SIKULI_IMAGE_REPO'])");
-                strWriter.WriteLine("Debug.log(\"Validation - Check if image path is okay = %s\" % getImagePath())");
-                finalCommand += String.Format("\"{0}\" \n", envFilePath);
-                strWriter.Close();
-            }
-        }
+        // Looks redundant - Dec 21
+        //private void SetEnvironmentVariables(ref string finalCommand)
+        //{
+        //    string envFilePath = tBxScriptsFolder.Text + "\\SetEnvVariables.py";
+        //    StreamWriter strWriter = File.CreateText(envFilePath);
+        //    if (strWriter != null)
+        //    {
+        //        strWriter.WriteLine("from sikuli import* #http://doc.sikuli.org/globals.html#importingsikuliscripts");
+        //        strWriter.WriteLine("import os");
+        //        //strWriter.WriteLine(String.Format("os.environ[\"{0}\"]=\"{1}\"", "SIKULI_IMAGE_REPO", tbxImageRepoPath.Text));
+        //        strWriter.WriteLine(String.Format("addImagePath('{0}')", tbxImageRepoPath.Text));
+        //        //strWriter.WriteLine("print(\"Validation - Check Env Variable SIKULI_IMAGE_PATH = %s\" % os.environ['SIKULI_IMAGE_REPO'])");
+        //        strWriter.WriteLine("Debug.log(\"Validation - Check if image path is okay = %s\" % getImagePath())");
+        //        finalCommand += String.Format("\"{0}\" \n", envFilePath);
+        //        strWriter.Close();
+        //    }
+        //}
 
         private void UpdateResultsInTree(TreeNode currentNode)
         {
@@ -282,7 +282,8 @@ namespace SikuliTestSuit
             StreamReader readfileSream = File.OpenText(intermediateFileName);
             // Erase previous messages.
             tbxLogArea.AppendText("\n\n");
-            tbxLogArea.AppendText(readfileSream.ReadToEnd());
+            string bufferFileContent = readfileSream.ReadToEnd();
+            tbxLogArea.AppendText(bufferFileContent);
 
             // Also print the final results file.
             StreamWriter writefilestream = null;
@@ -295,7 +296,7 @@ namespace SikuliTestSuit
                 writefilestream = File.AppendText(resultFileName);
             }
 
-            writefilestream.Write(readfileSream.ReadToEnd());
+            writefilestream.Write(bufferFileContent);
 
             readfileSream.Close();
             writefilestream.Close();

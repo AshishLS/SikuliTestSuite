@@ -32,8 +32,6 @@
             this.lblScriptsFolder = new System.Windows.Forms.Label();
             this.lblSikuliInstallation = new System.Windows.Forms.Label();
             this.gBxPreReq = new System.Windows.Forms.GroupBox();
-            this.tbxImageRepoPath = new System.Windows.Forms.TextBox();
-            this.lblImageRepoPath = new System.Windows.Forms.Label();
             this.tBxSikuliInstallationPath = new System.Windows.Forms.TextBox();
             this.tBxScriptsFolder = new System.Windows.Forms.TextBox();
             this.tBxTestDataPath = new System.Windows.Forms.TextBox();
@@ -77,8 +75,6 @@
             // 
             // gBxPreReq
             // 
-            this.gBxPreReq.Controls.Add(this.tbxImageRepoPath);
-            this.gBxPreReq.Controls.Add(this.lblImageRepoPath);
             this.gBxPreReq.Controls.Add(this.tBxSikuliInstallationPath);
             this.gBxPreReq.Controls.Add(this.tBxScriptsFolder);
             this.gBxPreReq.Controls.Add(this.tBxTestDataPath);
@@ -91,26 +87,6 @@
             this.gBxPreReq.TabIndex = 3;
             this.gBxPreReq.TabStop = false;
             this.gBxPreReq.Text = "Prerequisites";
-            // 
-            // tbxImageRepoPath
-            // 
-            this.tbxImageRepoPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::SikuliTestSuit.Properties.Settings.Default, "settingImageRepoPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbxImageRepoPath.Enabled = false;
-            this.tbxImageRepoPath.Location = new System.Drawing.Point(120, 94);
-            this.tbxImageRepoPath.Name = "tbxImageRepoPath";
-            this.tbxImageRepoPath.Size = new System.Drawing.Size(377, 20);
-            this.tbxImageRepoPath.TabIndex = 7;
-            this.tbxImageRepoPath.Text = global::SikuliTestSuit.Properties.Settings.Default.settingImageRepoPath;
-            // 
-            // lblImageRepoPath
-            // 
-            this.lblImageRepoPath.AutoSize = true;
-            this.lblImageRepoPath.Location = new System.Drawing.Point(6, 97);
-            this.lblImageRepoPath.Name = "lblImageRepoPath";
-            this.lblImageRepoPath.Size = new System.Drawing.Size(90, 13);
-            this.lblImageRepoPath.TabIndex = 6;
-            this.lblImageRepoPath.Text = "Image Repo Path";
-            this.lblImageRepoPath.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // tBxSikuliInstallationPath
             // 
@@ -248,8 +224,6 @@
         private System.Windows.Forms.TreeView trViewScripts;
         private System.Windows.Forms.Button btnSetPrereq;
         private System.Windows.Forms.Button btnRunTests;
-        private System.Windows.Forms.TextBox tbxImageRepoPath;
-        private System.Windows.Forms.Label lblImageRepoPath;
         private System.Windows.Forms.TextBox tbxLogArea;
         private System.Windows.Forms.Label lblRunForTimes;
         private System.Windows.Forms.DomainUpDown counterRunTimes;
